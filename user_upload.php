@@ -1,11 +1,9 @@
 <?php include "functions.php";?>
-
 <?php
 
 if($argc == 2){  
 
         $temp=$argv[1];
-
         }elseif($argc==3){
         $temp=$argv[1];
         $temp .=" "; 

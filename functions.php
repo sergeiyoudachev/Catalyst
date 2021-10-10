@@ -168,7 +168,7 @@ database won't be altered. Example : --dry_run users.csv \n
 
 function showMysqlHost(){
 
-$servername = "localhost";
+$servername = "localhost"; // or "127.0.0.1"
 $username = "root";
 $password = "";
 // Create connection
@@ -201,14 +201,14 @@ function validateEmail($email){
 
 function userMySql(){
 
-echo "MySQL username - root \n";
+echo "MySQL username, by default - root \n";
 }
 /*----------------------- function passwordMySql -----------------------------*/
 /* show MySQL password */
 
 function passwordMySql(){
 
-echo "MySQL password ia blank \n";
+echo "MySQL password, by default - blank(not set) \n";
 }
 
 ?>
