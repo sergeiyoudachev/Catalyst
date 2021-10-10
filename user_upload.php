@@ -1,23 +1,24 @@
 <?php include "functions.php";?>
+
+
 <?php
 
 if($argc == 2){  
 
-$temp=$argv[1];
+        $temp=$argv[1];
 
-}elseif($argc==3){
-$temp=$argv[1];
-$temp .=" "; 
-$temp .=$argv[2];
-}else{
-$temp ='--help';
+        }elseif($argc==3){
+        $temp=$argv[1];
+        $temp .=" "; 
+        $temp .=$argv[2];
+        }else{
+        $temp ='--help';
 }
 
 if($temp=='--insert users.csv'){
-	
     ConnectDB();
     CreateDB();
-    CreateTable('name','surname','email');
+    CreateTable();
     printFile();
 
 }elseif($temp=='--file users.csv'){
@@ -28,13 +29,13 @@ if($temp=='--insert users.csv'){
      
     ConnectDB();
     CreateDB();
-    CreateTable('name','surname','email');
+    CreateTable();
 
 }elseif($temp=='--dry_run users.csv'){
     
     ConnectDB();
     CreateDB();
-    CreateTable('name','surname','email');
+    CreateTable();
     showFile();
 
 }elseif($temp=='-u'){

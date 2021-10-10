@@ -40,12 +40,17 @@ $conn->close();
 /*-----------------------------function CreateTable -------------------------------*/
 /*  Create MySQL users table  */
 
-function CreateTable($param1,$param2,$param3){
+function CreateTable(){
 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "usersDB";
+     // read head of CSV for insert it in the table
+if (($handle = fopen("users.csv", "r")) !== FALSE) {
+     $data = fgetcsv($handle, 1000, ","); 
+    }
+    fclose($handle);
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -55,12 +60,12 @@ if ($conn->connect_error) {
 }
 // sql to create table
 $sql = "CREATE TABLE users (
-$param1 VARCHAR(50) NOT NULL,
-$param2 VARCHAR(50) NOT NULL,
-$param3 VARCHAR(50) NOT NULL 
+$data[0] VARCHAR(50) NOT NULL,
+$data[1] VARCHAR(50) NOT NULL,
+$data[2] VARCHAR(50) NOT NULL 
 )";
 if ($conn->query($sql) === TRUE) {
-   $conn->query("ALTER TABLE `users` ADD UNIQUE KEY `$param3` (`$param3`)"); 
+   $conn->query("ALTER TABLE `users` ADD UNIQUE KEY `$data[2]` (`$data[2]`)"); 
    echo "Table USERS created successfully \n";
 } else {
   echo "Error creating table: " . $conn->error;
