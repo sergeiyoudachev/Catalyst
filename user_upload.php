@@ -1,6 +1,5 @@
 <?php include "functions.php";?>
 
-
 <?php
 
 if($argc == 2){  
