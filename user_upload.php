@@ -1,6 +1,8 @@
 <?php include "functions.php";?>
 <?php
 
+$argc;
+$argv;
 if($argc == 2){  
 
         $temp=$argv[1];
