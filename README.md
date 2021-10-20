@@ -1,5 +1,4 @@
-# Catalyst
-Script Task and Logic Test of Sergei Youdachev
+
 # Default connection details
 user : root
 
